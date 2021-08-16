@@ -1,0 +1,65 @@
+1] mini  cab project
+import java.util.Scanner;
+class cab {
+    int fare;
+    
+    int d;
+    public cab(){
+        fare=50;
+    }
+    public cab( int amt) {
+        fare = amt;
+    }
+
+}
+class Ridercab {
+    public static void main(String[] args) {
+        int cd;
+        Scanner sc = new Scanner(System.in);
+        System.out.print(" enter the distance of the cab from user : " );
+        cd=sc.nextInt();
+        if(cd>5)  {
+             cab ob = new cab( 50 + 10 * (cd - 5) );
+             System.out.print(" enter the distance travelled : ");
+           ob.d=sc.nextInt();
+           ob.fare += 10*ob.d;
+           System.out.println(" total fare :" + ob.fare);
+          }
+        else
+           {
+             cab ob = new cab();
+           
+           System.out.print(" enter the distance travelled : ");
+           ob.d=sc.nextInt();
+           ob.fare = 10*ob.d;
+           System.out.println(" total fare :" + ob.fare);
+           }
+           sc.close();
+    }
+}
+
+
+
+2] Difference between final, finally and finalize.
+solution:
+        final:
+             a] Definition :	final is the keyword and access modifier which is used to apply restrictions on a class, method or variable.
+             b]Applicable : to	Final keyword is used with the classes, methods and variables.
+             c]Functionality:	(1) Once declared, final variable becomes constant and cannot be modified.
+                              (2) final method cannot be overridden by sub class.
+                              (3) final class cannot be inherited.
+             d]Execution	:Final method is executed only when we call it.                 
+                          
+         finally:
+             a] Definition :finally is the block in Java Exception Handling to execute the important code whether the exception occurs or not.
+             b]Applicable :Finally block is always related to the try and catch block in exception handling.
+             c]Functionality:(1) finally block runs the important code even if exception occurs or not.
+                             (2) finally block cleans up all the resources used in try block.
+             d]Execution	:Finally block is executed as soon as the try-catch block is executed.It's execution is not dependant on the exception. 
+          
+         finalize:
+             a]Definition :finalize is the method in Java which is used to perform clean up processing just before object is garbage collected.
+             b]Applicable :finalize() method is used with the objects.
+             c]Functionality:finalize method performs the cleaning activities with respect to the object before its destruction.
+             d]Execution	:finalize method is executed just before the object is destroyed.
+         
